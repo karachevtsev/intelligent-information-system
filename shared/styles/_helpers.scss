@@ -1,0 +1,77 @@
+.m-0 {
+    margin: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.pl-0 {
+    padding-left: 0;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-lg-block {
+    @include laptop-lg() {
+        display: block;
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (min-width: 1300px) {
+    .show-on-mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1301px) {
+    .show-on-desktop {
+        display: none !important;
+    }
+}
+
+.noprint {
+    @include noprint();
+}
+
+.img-rounded {
+    border-radius: 50%;
+}

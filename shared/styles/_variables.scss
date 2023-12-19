@@ -1,0 +1,121 @@
+// base colors
+$black: #000;
+$gray-dark: #333333;
+$gray: #7A7B7D;
+$gray-light: #999999;
+$gray-lighten: #CDCDCD;
+$gray-lighter: #EDEDEF;
+$white: #fff;
+$red-dark: #973333;
+$red: #E8132A;
+$red-light: #BE4949;
+$pink: #FAE4E4;
+$yellow-dark: #F1B20F;
+$yellow: #F1C40F;
+$yellow-light: #FFE57B;
+$blue: #0243EC;
+
+
+// sites colors
+$news: #8BBA43;
+$docs: #31B0E4;
+$blank: #337CE9;
+$consulting: #FF603E;
+$services: #df253a;
+$webinary: #8B48CA;
+$seminars: #515e91;
+$online: #FF8A00;
+$my: #0E7838;
+$dtkt: #0DA236;
+$comments: #FFE57B;
+$club: #9B965C;
+
+$site-brand-colors: (
+    "news": $news,
+    "docs": $docs,
+    "blank": $blank,
+    "consulting": $consulting,
+    "services": $services,
+    "webinary": $webinary,
+    "seminars": $seminars,
+    "online": $online,
+    "my": $my,
+    "dtkt": $dtkt,
+    "comments": $comments,
+    "club": $club,
+);
+
+
+// theme colors
+$color-main: #8BBA43 !default;
+$color-success: #8BBA43 !default;
+$color-success-muted: #7AA33B !default;
+$color-danger: #BE4949 !default;
+$color-danger-muted: #973333 !default;
+$color-warning: #F1C40F !default;
+$color-warning-muted: #F1B20F !default;
+
+
+// social colors
+$tg-color: #2CD9FF;
+$vb-color: #8255E3;
+$fb-color: #2E9BFF;
+
+
+// general typography
+$font-size: 15px !default;
+$font-size-h1: 26px !default;
+$font-size-h2: 21px !default;
+$font-size-h3: 18px !default;
+$font-size-h4: 14px !default;
+$line-height: 1.4 !default;
+$font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Ubuntu", "Droid Sans", "Helvetica Neue", "Arial", sans-serif !default;
+
+
+// semantic colors
+$text-color: $black !default;
+$text-color-muted: $gray-dark !default;
+$link-color: $color-main !default;
+$link-color-hover: $color-success-muted !default;
+$link-color-active: $color-main !default;
+$border-color: $gray-lighter !default;
+$border-color-hover: $color-success !default;
+$body-bg: $white !default;
+
+
+// main buttons colors
+$btn-color: $color-warning;
+$btn-color-hover: $color-warning-muted;
+
+
+// media width
+$screen-xs: 0;
+$screen-sm: 370px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1520px;
+
+
+// forms
+$field-padding-vertical: 10px;
+$field-padding-horizontal: 10px;
+$field-border-radius: 6px;
+
+
+// pagination
+$pagination-color: $color-main !default;
+
+
+// other
+$header-height: 52px;
+$border-radius: 16px;
+$opacity: 0.7;
+
+
+//spinner
+$spinner-color: $gray-light !default;
+
+
+//menu links
+$menu-links-active: #8BBA43 !default;

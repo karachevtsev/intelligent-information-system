@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include tablet() {
+        padding-right: 15px;
+        padding-left: 15px;
+        max-width: 720px;
+    }
+
+    @include laptop-lg() {
+        max-width: 960px;
+    }
+
+    @include laptop-xl() {
+        max-width: 1400px;
+    }
+
+    @include laptop-xxl() {
+        max-width: 1520px;
+    }
+}
+
+.main {
+    overflow: hidden;
+
+    &-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        @include laptop-lg() {
+            display: flex;
+            padding-top: 30px;
+            padding-bottom: 70px;
+        }
+    }
+
+    .content {
+        @include laptop-lg() {
+            flex-grow: 1;
+            display: flex;
+            order: 2;
+        }
+
+        .content-box {
+            flex-grow: 1;
+        }
+    }
+
+    .sidebar {
+        display: none;
+
+        &-left {
+            margin-right: 15px;
+        }
+
+        &-right {
+            margin-left: 15px;
+        }
+
+        @include laptop-lg() {
+            display: block;
+            order: 1;
+            flex-shrink: 0;
+            width: 230px;
+        }
+
+        @include laptop-xl() {
+            width: 330px;
+        }
+
+        @include noprint();
+    }
+
+    .openx-sidebar {
+        min-width: 300px;
+        min-height: 250px;
+        margin: 0 auto;
+    }
+}

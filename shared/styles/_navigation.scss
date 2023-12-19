@@ -1,0 +1,154 @@
+.navigation {
+    position: relative;
+
+    &:hover {
+        .navigation-box-dropdown {
+            display: block;
+        }
+    }
+
+    &-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        color: $white;
+        width: 140px;
+        height: 30px;
+        line-height: 30px;
+        background: rgba(0, 0, 0, 0.12);
+        border-radius: 20px;
+        cursor: pointer;
+        user-select: none;
+
+        svg {
+            margin-left: 10px;
+        }
+    }
+
+    &-box-dropdown {
+        display: none;
+        top: 100%;
+        right: 0;
+        position: absolute;
+        z-index: 1;
+        padding: 7px;
+    }
+
+    &-box {
+        width: 175px;
+        padding: 10px;
+        background: $white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+}
+
+.navigation-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        + li {
+            margin-top: 10px;
+
+            &:last-child {
+                position: relative;
+                margin-top: 13px;
+                padding-top: 15px;
+                padding-bottom: 5px;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    background: $border-color;
+
+                    @include laptop-xl() {
+                        left: 10px;
+                        right: 10px;
+                    }
+                }
+
+                @include laptop-xl() {
+                    margin-top: 13px;
+                    padding-top: 13px;
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    a {
+        position: relative;
+        display: flex;
+        padding: 0 10px;
+        margin: 0 -10px;
+        align-items: center;
+        font-size: 18px;
+        line-height: 30px;
+        color: inherit;
+        text-decoration: none;
+        border-radius: 6px;
+
+        @include laptop-lg() {
+            margin: 0;
+            padding: 0 10px;
+            font-size: 15px;
+        }
+
+        &:hover {
+            background: #EFEFEF;
+        }
+
+        &.active {
+            font-weight: bold;
+        }
+
+        $sites: (
+            'dtkt',
+            'news',
+            'docs',
+            'blank',
+            'consulting',
+            'services',
+            'webinary',
+            'club',
+            'online',
+            'seminars',
+            'my',
+        );
+
+        @each $site in $sites {
+            &.#{$site} {
+                .svg-icon {
+                    svg {
+                        fill: getSiteColor($site);
+                    }
+
+                    circle {
+                        stroke: getSiteColor($site);
+                    }
+
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .svg-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+
+        @include laptop-lg() {
+            margin-right: 10px;
+        }
+    }
+}

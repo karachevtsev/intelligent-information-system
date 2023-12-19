@@ -1,0 +1,67 @@
+.breadcrumbs {
+    padding-top: 20px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            line-height: 24px;
+
+            a, span {
+                position: relative;
+                text-decoration: none;
+                color: $gray-light;
+
+                &:hover {
+                    color: $gray-dark;
+                }
+
+                &.capitalize {
+                    text-transform: capitalize;
+                }
+            }
+
+            &:last-child {
+                a, span {
+                    color: $gray;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: $gray-dark;
+                    }
+                }
+            }
+
+            + li {
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 5px;
+                    height: 8px;
+                    flex-shrink: 0;
+                    margin: 0 12px;
+                    background: url(../assets/svg/arrow-breadcrumbs.svg) no-repeat center;
+                }
+            }
+        }
+    }
+
+    &.hide-on-mobile {
+        display: none;
+
+        @include laptop-lg() {
+            display: block;
+        }
+    }
+
+    @include noprint();
+}

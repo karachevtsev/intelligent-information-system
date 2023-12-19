@@ -1,0 +1,189 @@
+.accountant-calendar {
+    &-title {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 25px;
+        color: $black;
+        text-align: center;
+
+        @include laptop-lg() {
+            text-align: left;
+        }
+    }
+
+    &-row {
+        display: flex;
+        margin-left: -7.6px;
+        margin-right: -7.6px;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include tablet() {
+            justify-content: space-between;
+        }
+
+        @include laptop-lg() {
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.calendar-card {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 215px;
+    flex-shrink: 0;
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    background: $white;
+    margin: 7.5px;
+
+    @include laptop-lg() {
+        width: 200px;
+    }
+
+    @include laptop-xl() {
+        width: 215px;
+    }
+
+    @include laptop-xxl() {
+        flex: 1;
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        padding: 20px 20px 15px 20px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        border-bottom: 1px solid $border-color;
+
+        &:before {
+            content: '';
+            display: block;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        &.calendar-events {
+            &:before {
+                width: 27px;
+                height: 24px;
+                background: url(../assets/svg/calendar-webinar.svg) no-repeat top center;
+                background-size: contain;
+            }
+        }
+
+        &.calendar-blanks-apply {
+            &:before {
+                width: 32px;
+                height: 32px;
+                background: url(../assets/svg/calendar-blanks.svg) no-repeat top center;
+                background-size: contain;
+            }
+        }
+
+        &.calendar-blanks-pay {
+            &:before {
+                width: 32px;
+                height: 32px;
+                background: url(../assets/svg/calendar-pay.svg) no-repeat top center;
+                background-size: contain;
+            }
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 20px 20px 20px;
+        overflow: hidden;
+    }
+
+    &-date {
+        margin-bottom: 20px;
+    }
+
+    &-list {
+        flex: 1 0 auto;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            line-height: 17px;
+            color: $gray-dark;
+
+            + li {
+                margin-top: 12px;
+            }
+
+            a, span {
+                font-weight: 500;
+                font-size: 14px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            a {
+                &:hover {
+                    color: $color-main;
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                margin-top: 12px;
+                margin-bottom: 0;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 18px;
+                color: $gray;
+
+                &.m-0 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &-btn {
+        position: relative;
+        margin-top: auto;
+        padding: 20px;
+        text-align: center;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -65px;
+            right: 0;
+            left: 0;
+            height: 80px;
+            background: linear-gradient(0deg, #fff 30px, hsla(0, 0%, 100%, .2) 100%);
+            pointer-events: none;
+        }
+
+        .btn-calendar {
+            width: 100%;
+            font-size: 15px;
+            line-height: 25px;
+            color: $black;
+
+            @include laptop-xxl() {
+                width: 180px;
+                margin: 0 auto;
+            }
+        }
+    }
+}

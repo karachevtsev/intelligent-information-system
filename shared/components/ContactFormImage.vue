@@ -1,0 +1,9 @@
+<template>
+    <img
+        alt=""
+        height="160"
+        loading="lazy"
+        src="../assets/img/contact-form.svg?url"
+        width="200"
+    />
+</template>

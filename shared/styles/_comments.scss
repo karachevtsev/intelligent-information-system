@@ -1,0 +1,371 @@
+.comments {
+    margin-bottom: 30px;
+    padding: 20px 20px 30px 20px;
+    background: $white;
+    border: 1px solid $gray-lighter;
+    border-radius: 16px;
+
+    @include laptop-lg() {
+        padding: 30px 30px 50px 30px;
+    }
+
+    @include noprint();
+
+    &-count {
+        margin-bottom: 20px;
+        font-size: 17px;
+        font-weight: 500;
+
+        @include laptop-lg() {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+    }
+
+    &-form-body {
+        flex-grow: 1;
+    }
+
+    &-form {
+        display: flex;
+
+        .userpic {
+            display: none;
+
+            @include laptop-lg() {
+                display: flex;
+                margin-right: 12px;
+            }
+        }
+    }
+
+    &-list {
+        padding-top: 30px;
+
+        @include laptop-lg() {
+            padding-top: 40px;
+        }
+    }
+
+    &-empty {
+        padding-top: 20px;
+        text-align: center;
+    }
+}
+
+.userpic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    left: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: $white;
+
+    @include laptop-lg() {
+        font-size: 21px;
+    }
+
+    &.userpic-default {
+        background: #CDCDD4;
+    }
+
+    &.userpic-user {
+        background: $yellow-light;
+    }
+
+    &.userpic-form {
+        background: #cdcdd4 url(../assets/svg/user.svg) no-repeat center;
+        background-size: contain;
+    }
+
+    @include laptop-lg() {
+        width: 48px;
+        height: 48px;
+    }
+
+    img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+    }
+}
+
+.comment-form {
+
+    &-fields {
+        padding: 0 20px;
+        border: 2px solid $gray-lighter;
+        border-radius: 8px;
+
+        .comment-input {
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            font-size: 15px;
+            font-weight: 400;
+            color: $gray-light;
+
+            &:focus {
+                outline: none;
+
+                @include placeholder() {
+                    color: transparent;
+                }
+            }
+        }
+
+        .comment-auth {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            flex-shrink: 0;
+            font-size: 14px;
+            text-decoration: underline;
+            color: #7A7B7D;
+            margin-left: 20px;
+            cursor: pointer;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        .comment-textarea {
+            width: 100%;
+            min-height: 70px;
+            padding: 15px 0 15px;
+            font-family: $font-family;
+            font-size: 15px;
+            font-weight: 400;
+            color: #999999;
+            border: none;
+            border-top: 1px solid $gray-lighter;
+            resize: none;
+
+            @include scroll();
+
+            @include placeholder() {
+                font-size: 15px;
+                font-weight: 400;
+                color: $gray-light;
+            }
+
+            &:focus {
+                outline: none;
+
+                @include placeholder() {
+                    color: transparent;
+                }
+            }
+        }
+
+        &.has-errors {
+            border-color: #EE1E34;
+
+            .comment-textarea {
+                border-top-color: #EE1E34;
+            }
+        }
+
+        [placeholder]:empty::before {
+            content: attr(placeholder);
+            color: #999999;
+        }
+
+        [placeholder]:empty:focus::before {
+            content: "";
+        }
+    }
+
+    &-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-controls {
+        margin-top: 20px;
+
+        .form-check {
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-right: 20px;
+
+            &-label {
+                cursor: pointer;
+            }
+
+            @include tablet() {
+                margin-bottom: 0;
+                margin-left: 25px;
+                order: 2;
+            }
+        }
+
+        @include tablet() {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+    }
+
+
+    &-auth {
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-right: 20px;
+
+        > span {
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        @include tablet() {
+            margin-bottom: 0;
+            margin-left: 25px;
+            order: 2;
+        }
+    }
+
+    .btn {
+        width: 150px;
+        line-height: 24px;
+
+        @include laptop-lg() {
+            order: 1;
+        }
+    }
+
+    .error {
+        margin-left: 23px;
+        margin-top: 10px;
+    }
+}
+
+.comment {
+
+    + .comment {
+        margin-top: 20px;
+
+        @include laptop-lg() {
+            margin-top: 40px;
+        }
+    }
+
+    .comment {
+        margin-top: 20px;
+        padding-left: 40px;
+
+        @include laptop-lg() {
+            margin-top: 40px;
+            padding-left: 60px;
+        }
+
+        .comments-form {
+            padding-left: 0;
+        }
+    }
+
+    > .comments-form {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-left: 40px;
+
+        @include laptop-lg() {
+            margin-top: 40px;
+            padding-left: 60px;
+        }
+    }
+
+    &-container {
+        display: flex;
+    }
+
+    .userpic {
+        margin-right: 10px;
+
+        @include laptop-lg() {
+            margin-right: 12px;
+        }
+    }
+
+    &-top {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+        @include laptop-lg() {
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        b {
+            font-weight: 500;
+            font-size: 16px;
+
+            @include laptop-lg() {
+                margin-right: 40px;
+            }
+
+            > span {
+                color: inherit;
+
+                .worker {
+                    font-size: 16px;
+                    color: #0DA236;
+                }
+            }
+        }
+
+        span {
+            font-size: 14px;
+            color: $gray-lighten;
+        }
+    }
+
+    &-text {
+        margin-bottom: 10px;
+        color: $gray-dark;
+    }
+
+    &-controls {
+        display: inline-block;
+        color: $gray;
+        cursor: pointer;
+    }
+
+    &-more {
+        position: relative;
+        margin-top: 20px;
+        margin-left: 80px;
+        padding-left: 35px;
+        color: $gray;
+        cursor: pointer;
+
+        @include laptop-lg() {
+            margin-left: 120px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 26px;
+            height: 20px;
+            background: url(../assets/svg/arrow-comments.svg) no-repeat center;
+        }
+    }
+}

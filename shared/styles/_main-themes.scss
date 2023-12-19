@@ -1,0 +1,139 @@
+.main-themes {
+    padding-top: 20px;
+
+    &-title {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $color-main;
+
+        @include laptop-lg() {
+            margin-bottom: 5px;
+        }
+
+        @include laptop-xl() {
+            font-size: 14px;
+        }
+    }
+
+    &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-slider {
+        flex-grow: 1;
+        overflow: hidden;
+
+        @include laptop-lg() {
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 50px;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 1) 100%);
+                pointer-events: none;
+            }
+
+            &.end {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            max-width: 690px;
+            margin: 0;
+            padding: 8px 0;
+            list-style: none;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            @include laptop-lg() {
+                max-width: 100%;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                flex-shrink: 0;
+                margin-right: 8px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    display: inline-flex;
+                    padding: 5px 15px;
+                    font-weight: 400;
+                    font-size: 9px;
+                    line-height: 10px;
+                    color: $gray;
+                    text-decoration: none;
+                    border: 1px solid $border-color;
+                    border-radius: 6px;
+                    white-space: nowrap;
+
+                    &:hover {
+                        color: $border-color-hover;
+                        border-color: $border-color-hover;
+                    }
+
+                    @include laptop-lg() {
+                        padding: 5px 10px;
+                        font-size: 12px;
+                    }
+
+                    @include laptop-xl() {
+                        padding: 7px 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-btn {
+        display: none;
+
+        @include laptop-xl() {
+            display: block;
+            padding-left: 30px;
+        }
+
+        .btn {
+            width: 150px;
+            font-size: 14px;
+            line-height: 15px;
+            background: $color-success;
+            color: $white;
+
+            &:hover {
+                background: $color-success-muted;
+            }
+        }
+    }
+
+    &.hide-on-mobile {
+        display: none;
+
+        @include laptop-lg() {
+            display: block;
+        }
+    }
+
+    @include noprint();
+}

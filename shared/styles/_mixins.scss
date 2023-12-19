@@ -1,0 +1,126 @@
+@mixin mobile {
+    @media (min-width: $screen-sm) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $screen-md) {
+        @content;
+    }
+}
+
+@mixin laptop-lg {
+    @media (min-width: $screen-lg) {
+        @content;
+    }
+}
+
+@mixin laptop-xl {
+    @media (min-width: $screen-xl) {
+        @content;
+    }
+}
+
+@mixin laptop-xxl {
+    @media (min-width: $screen-xxl) {
+        @content;
+    }
+}
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+}
+
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+@mixin noprint {
+    @include print {
+        display: none !important;
+    }
+}
+
+@mixin scroll() {
+    &::-webkit-scrollbar-track {
+        background-color: #fff;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 7px;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #c1c1c1;
+    }
+}
+
+@mixin button-reset() {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    user-select: none;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+    background-image: none;
+}
+
+@mixin scroll-start() {
+    scroll-margin-top: 55px;
+
+    @include laptop-lg() {
+        scroll-margin-top: 110px;
+    }
+}
+
+@keyframes skeleton-loading {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+@mixin skeleton-loading($background: #eee) {
+    background: $background;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    background-size: 200% 100%;
+    animation: 1.5s skeleton-loading linear infinite;
+}

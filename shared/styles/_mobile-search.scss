@@ -1,0 +1,37 @@
+.mobile-search {
+
+    @include laptop-lg() {
+        display: none;
+    }
+
+    &-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $header-height;
+        height: $header-height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            fill: transparent;
+        }
+    }
+
+    &-container {
+        position: fixed;
+        z-index: 5;
+        top: $header-height;
+        right: 0;
+        left: 0;
+        height: 0;
+        padding: 0;
+    }
+
+    &-box {
+        padding: 0 15px 10px;
+        width: 100%;
+        background: $color-main;
+    }
+}

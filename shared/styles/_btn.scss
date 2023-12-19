@@ -1,0 +1,131 @@
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 30px;
+    border: 0;
+    padding: 8px 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    user-select: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: inherit;
+    line-height: $line-height;
+    text-decoration: none;
+    text-transform: none;
+    color: $text-color;
+    background-color: $btn-color;
+    background-image: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: $text-color;
+        background-color: $btn-color-hover;
+    }
+
+    &:disabled {
+        opacity: $opacity;
+        cursor: not-allowed;
+        color: $text-color;
+        background-color: $gray-lighten;
+    }
+
+    &-profile {
+        min-width: 170px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:focus {
+            color: $text-color;
+        }
+    }
+
+    &-profile-delete {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border: 1px solid #BE4949;
+        color: #BE4949;
+        background: $white;
+
+        &:hover,
+        &:active {
+            background: #BE4949;
+            color: $white;
+        }
+    }
+
+    &-report {
+        min-width: 110px;
+        line-height: 0.8;
+
+        &:hover, &:active, &:focus {
+            color: $black;
+        }
+    }
+
+    &-report-activate {
+        background: #51C06F;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+            background: #39AD58;
+            color: $white;
+        }
+    }
+
+    &-webinar {
+        min-width: 150px;
+        font-size: 14px;
+        line-height: 14px;
+        background-color: $color-main;
+        color: $white;
+
+        &:hover, &:active {
+            background: $color-success-muted;
+            color: $white;
+        }
+
+        &:focus {
+            color: $white;
+        }
+
+        &:disabled {
+            opacity: $opacity;
+            cursor: not-allowed;
+            color: $white;
+            background-color: $color-main;
+        }
+    }
+
+    &-webinar-archive {
+        background-color: #F3E6FF;
+        color: #8B48CA;
+
+        &:hover, &:active, &:focus {
+            background: $color-main;
+            color: $white;
+        }
+    }
+
+    &-toggle-annotations {
+        width: 140px;
+        line-height: 15px;
+        background: #EDEDEF;
+        color: #31B0E5;
+
+        &:hover {
+            background: #E6F5FC;
+            border-radius: 20px;
+            text-decoration: underline;
+            color: #31B0E5;
+        }
+    }
+}

@@ -1,0 +1,222 @@
+.footer {
+    @include laptop-lg() {
+        background: linear-gradient(90deg, #F4F4F4 0, #F4F4F4 50%, #CDCDCD 50%, #CDCDCD 100%);
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1400px;
+
+        @include laptop-lg() {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .logo-footer {
+        position: relative;
+        top: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        @include laptop-lg() {
+            margin-bottom: 0;
+        }
+    }
+
+    &-left {
+        padding: 30px 20px;
+        background: #F4F4F4;
+
+        @include laptop-xl() {
+            flex-grow: 1;
+            padding-left: 15px;
+            padding-right: 50px;
+            padding-bottom: 13px;
+        }
+    }
+
+    &-row {
+        display: flex;
+        border-bottom: 1px solid $gray-lighten;
+    }
+
+    &-col {
+        flex: 1;
+        width: 100%;
+
+        + .footer-col {
+            margin-left: 35px;
+        }
+
+        &:last-child {
+            margin-left: 70px;
+        }
+    }
+
+    &-links {
+        display: none;
+
+        @include laptop-xl() {
+            display: flex;
+            flex-direction: column;
+        }
+
+        span {
+            padding-left: 40px;
+            display: block;
+            font-weight: 500;
+            margin-bottom: 18px;
+            color: $gray-dark;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 0 0 40px;
+            list-style: none;
+            flex: 1;
+
+            li {
+                line-height: 18px;
+                color: $gray;
+
+                + li {
+                    margin-top: 10px;
+                }
+
+                a {
+                    color: $gray;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-weight: 500;
+                        color: $gray-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    &-links-row {
+        display: flex;
+    }
+
+    &-right {
+        padding: 30px 20px;
+        background: $gray-lighten url(../assets/img/footer-bg.png) no-repeat top right;
+
+        @include laptop-xl() {
+            width: 350px;
+            flex-shrink: 0;
+            padding-right: 15px;
+        }
+    }
+
+    &-about {
+        padding-bottom: 30px;
+
+        p {
+            margin-bottom: 25px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: $gray;
+
+            &:nth-child(2) {
+                margin-bottom: 30px;
+
+                @include laptop-xl() {
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+
+    &-app {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include laptop-xl() {
+            justify-content: space-between;
+        }
+
+        a {
+            margin: 0 2%;
+            line-height: 0;
+            display: block;
+
+            @include laptop-xl() {
+                margin: 0;
+            }
+
+            &:hover, &:active {
+                opacity: 0.95;
+            }
+        }
+    }
+
+    &-social {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+
+        @include laptop-lg() {
+            padding-top: 13px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+
+                + li {
+                    margin-left: 20px;
+                }
+
+                a {
+                    display: block;
+                    width: 32px;
+                    height: 33px;
+                    opacity: 0.7;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transition: opacity 0.3s;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                    $icons: (
+                        'fb',
+                        'tg',
+                        'inst',
+                        'vb',
+                        'yt',
+                    );
+
+                    @each $icon in $icons {
+                        &.#{$icon} {
+                            background-image: url(../assets/svg/footer-#{$icon}.svg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include noprint();
+}

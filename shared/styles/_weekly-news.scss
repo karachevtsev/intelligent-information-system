@@ -1,0 +1,122 @@
+.weekly-news {
+    padding: 30px 30px 35px 30px;
+    border-radius: 16px;
+    border: 1px solid #F1C40F;
+
+    &.weekly-bottom {
+        border: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 330px;
+
+        > h2,
+        > p {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            color: #333333;
+        }
+
+        > h2 {
+            margin-bottom: 0;
+        }
+
+        > p {
+            margin-bottom: 30px;
+        }
+
+        .weekly-news-form {
+            .form-label {
+                margin-bottom: 10px;
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 18px;
+                color: #333333;
+            }
+
+            .form-control {
+                padding-top: 11px;
+                padding-bottom: 11px;
+            }
+
+            .form-control:not(.has-errors) {
+                border-color: #CDCDCD;
+            }
+        }
+    }
+
+    > h2 {
+        margin-bottom: 3px;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 25px;
+    }
+
+    > p {
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 18px;
+        color: #F1C40F;
+    }
+
+    &-form {
+        .form-label {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-control {
+            padding-right: 50px;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 30px;
+            margin: 0;
+            border: 0;
+            background-color: #F1C40F;
+            background-image: none;
+            border-radius: 4px;
+            cursor: pointer;
+            overflow: hidden;
+            vertical-align: middle;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            user-select: none;
+            text-align: center;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: #F1B20F;
+            }
+        }
+    }
+
+    &-message {
+        padding-top: 15px;
+        font-size: 15px;
+        line-height: 18px;
+        color: #333333;
+
+        span {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

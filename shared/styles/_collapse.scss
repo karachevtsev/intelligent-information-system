@@ -1,0 +1,77 @@
+.collapse {
+    display: flex;
+    flex-direction: column;
+
+    + .collapse {
+        .collapse-button {
+            border-top: none;
+        }
+    }
+
+    &-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: left;
+        color: $text-color;
+        cursor: pointer;
+        border: none;
+        background-color: $white;
+        border-bottom: 1px solid $gray-lighter;
+        border-top: 1px solid $gray-lighter;
+        transition-duration: 300ms;
+
+        &:after {
+            content: '';
+            display: flex;
+            width: 12px;
+            height: 8px;
+            margin-left: auto;
+            background: url(../assets/svg/arrow-collapse.svg) no-repeat center;
+            background-size: contain;
+            transition-duration: 200ms;
+        }
+    }
+
+    .collapse-arrow-right {
+        &:after {
+            transform: rotate(270deg);
+        }
+    }
+
+    .collapse-arrow-rotated {
+        &:after {
+            transform: rotate(360deg);
+        }
+    }
+
+    &-box {
+        padding: 10px 0;
+        border-bottom: 1px solid $gray-lighter;
+    }
+
+    &.collapse-user {
+
+        .collapse-button {
+
+            > span {
+                @include text-overflow();
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+                margin-right: 16px;
+                background: url(../assets/svg/user-login.svg) no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+}

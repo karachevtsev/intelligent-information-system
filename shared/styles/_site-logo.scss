@@ -1,0 +1,23 @@
+.site-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 180px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: $white;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: $white;
+    }
+
+    &:before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        margin-right: 5px;
+        background: url(@/assets/svg/site-logo.svg) no-repeat center;
+    }
+}
