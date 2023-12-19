@@ -1,0 +1,26 @@
+.profile-login {
+    padding-top: 25px;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+
+    @include laptop-lg() {
+        padding-top: 50px;
+    }
+
+    p {
+        span {
+            text-decoration: underline;
+            color: #52A5D8;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    img {
+        margin: 0 auto 40px;
+    }
+}

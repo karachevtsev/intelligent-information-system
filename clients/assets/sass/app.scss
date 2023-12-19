@@ -1,0 +1,75 @@
+@import "dtkt-shared/styles/variables";
+@import "dtkt-shared/styles/mixins";
+@import "dtkt-shared/styles/functions";
+@import "dtkt-shared/styles/base";
+@import "dtkt-shared/styles/grid";
+@import "dtkt-shared/styles/btn";
+@import "dtkt-shared/styles/header";
+@import "dtkt-shared/styles/site-logo";
+@import "dtkt-shared/styles/mobile-menu";
+@import "dtkt-shared/styles/mobile-search";
+@import "dtkt-shared/styles/collapse";
+@import "dtkt-shared/styles/box";
+@import "dtkt-shared/styles/helpers";
+@import "dtkt-shared/styles/forms";
+@import "dtkt-shared/styles/auth-form";
+@import "dtkt-shared/styles/navigation";
+@import "dtkt-shared/styles/toast";
+@import "dtkt-shared/styles/footer";
+@import "dtkt-shared/styles/weekly-news";
+@import "dtkt-shared/styles/articles-list";
+
+@import "client-menu";
+@import "profile";
+@import "profile-login";
+@import "profile-table";
+@import "favorite-empty";
+@import "law";
+
+.collapse-user {
+    .collapse-box {
+        padding-top: 0;
+    }
+
+    .collapse-button {
+        border-bottom: none;
+    }
+}
+
+.box-header h1 .title-marked {
+    display: inline;
+}
+
+.modal-content-questions {
+    font-size: 16px;
+    text-align: center;
+
+    .btn {
+        margin-top: 10px;
+        min-width: 210px;
+    }
+}
+
+.btn-profile-deactivate,
+.btn-profile-deactivate-link {
+    background: transparent;
+    text-decoration: underline;
+    white-space: normal;
+
+    &:hover {
+        text-decoration: none;
+        background: transparent;
+    }
+
+    &:focus {
+        background: transparent;
+    }
+}
+
+.btn-profile-deactivate-link {
+    color: #DE4747;
+
+    &:hover {
+        color: #DE4747;
+    }
+}
